@@ -2,7 +2,7 @@
 
 /*
 __PocketMine Plugin__
-name=PocketMine Realms
+name=Epicserver only for 0.7.2
 description=Automatic server listing on PocketMine Realms and more features.
 version=0.1
 author=shoghicp
@@ -19,7 +19,7 @@ class PMRealms implements Plugin{
 	
 	public function init(){
 		$this->config = new Config($this->api->plugin->configPath($this)."config.yml", CONFIG_YAML, array(
-			"ownerName" => "",
+			"ownerName" => XD Crafted,
 			"externalAddress" => "",
 			"externalPort" => "",
 		));
@@ -59,9 +59,9 @@ class PMRealms implements Plugin{
 		$this->api->asyncOperation(ASYNC_CURL_POST, array(
 			"url" => "http://peoapi.pocketmine.net/server/heartbeat",
 			"data" => array(
-				"ip" => $this->config->get("externalAddress"),
+				"ip" => $this->config->get("90.214.236.207"),
 				"port" => (int) $this->config->get("externalPort"),
-				"ownerName" => $this->config->get("ownerName"),
+				"ownerName" => $this->config->get("XD Crafted"),
 				"name" => $this->server->name,
 				"maxNrPlayers" => $this->server->maxClients,
 				"nrPlayers" => count($this->api->player->getAll()),
